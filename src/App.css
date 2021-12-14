@@ -1,8 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;700&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  font-size: 36px;
+  line-height: 1.5;
+  color: #302C2C;
+}
+
+body,
+p {
+  margin: 0;
+}
+
 h1 {
+  font-size: 36px;
   color: green;
   text-align: center;
 }
 
 h2 {
   text-align: center;
+}
+
+.wrapper {
+  padding: 0 260px;
+  background-color: #C4C4C4;
+}
+
+.container {
+  max-width: 920px;
+  padding: 35px 70px;
+  margin: 0 auto;
+}
+
+.heading {
+  margin-bottom: 13px;
+}
+
+.calc {
+  margin: 0 auto;
+  max-width: 434px;
+
+  border-radius: 20px;
+}
+
+.calc__display {
+  height: 35vh;
+  padding: 30px 22px;
+  font-size: 40px;
+  background-color: #F5FAFE;
+
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.display__input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-align: right;
+  font-size: 36px;
+}
+
+.calc__panel {
+  padding: 27px 36px 50px 36px;
+
+  background-color: #CFD9E8;
+
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.btn {
+  text-align: center;
+  padding: 7px 10px 0 10px;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.0;
+
+  background-color: #BAB19C;
+
+  border-radius: 5px;
+}
+
+.btn--clear {
+  grid-area: clear;
+}
+
+.btn--backspace {
+  grid-area: backspace;
+}
+
+.btn--percent {
+  grid-area: percent;
+}
+
+.btn--division {
+  grid-area: division;
+}
+
+.btn--multiple {
+  grid-area: multiple;
+}
+
+.btn--subtraction {
+  grid-area: subtraction;
+}
+
+.btn--addition {
+  grid-area: addition;
+}
+
+.btn--one {
+  grid-area: one;
+}
+
+btn--two {
+  grid-area: two;
+}
+
+.btn--three {
+  grid-area: three;
+}
+
+.btn--four {
+  grid-area: four;
+}
+
+.btn--five {
+  grid-area: five;
+}
+
+.btn--six {
+  grid-area: six;
+}
+
+.btn--seven {
+  grid-area: seven;
+}
+
+.btn--eight {
+  grid-area: eight;
+}
+
+.btn--nine {
+  grid-area: nine;
+}
+
+btn--nothing {
+  grid-area: nothing;
+}
+
+.btn--zero {
+  grid-area: null;
+}
+
+.btn--comma {
+  grid-area: comma;
+}
+
+.btn--result {
+  grid-area: result;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "clear backspace percent division"
+    "seven eight nine multiple"
+    "four five six subtraction"
+    "one two three addition"
+    "nothing null comma result";
+  grid-gap: 16px;
 }

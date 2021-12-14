@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 
+import Calc from "./components/Calc.js";
+
 import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Boiled!</h1>
-        <h2>This application was created for education purposes</h2>
-         <button>Приступить</button>
+// ----- App component --------------------------------------------------------
+const App = (props) => {
+  return (
+    <div className="wrapper">
+      <div className="container">
+        <h1 className="heading">CALCULATE IT!</h1>
+        <Calc />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;
