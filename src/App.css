@@ -40,10 +40,6 @@ h2 {
   margin: 0 auto;
 }
 
-.heading {
-  margin-bottom: 13px;
-}
-
 .calc {
   margin: 0 auto;
   max-width: 434px;
@@ -179,4 +175,28 @@ btn--nothing {
     "one two three addition"
     "nothing null comma result";
   grid-gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__heading {
+  margin: 13px 26px 13px 0;
+}
+
+.header__toggle {
+  flex-basis: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.header__toggle--off {
+  background-image: url(../public/images/icon-toggle-off-50.png);
+}
+
+.header__toggle--on {
+  background-image: url(../public/images/icon-toggle-on-50.png);
 }
