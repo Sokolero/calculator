@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 
+const getClassName = (props) => {
+  const theme = props.theme;
+  const themeClasses = {
+    light: "header__toggle--off",
+    dark: "header__toggle--on",
+  }
+  return `header__toggle ${themeClasses[theme]}`;
+}
+
 class Toggle extends Component {
   constructor(props) {
     super(props);
   }
 
-  getClassName() {
-    const theme = this.props.theme;
-    const themeClasses = {
-      light: "header__toggle--off",
-      dark: "header__toggle--on",
-    }
-    return `header__toggle ${themeClasses[theme]}`;
-  }
-
   render() {
     return(
       <div
-        className={ this.getClassName() }
+        className={ getClassName(this.props) }
         onClick={ this.props.handleToggleTheme}>
       </div>
     );

@@ -65,6 +65,11 @@ h2 {
   font-size: 36px;
 }
 
+.display__input--dark {
+  color: #fff;
+  background-color: #232229;
+}
+
 .calc__panel {
   padding: 27px 36px 50px 36px;
 
@@ -118,7 +123,7 @@ h2 {
   grid-area: one;
 }
 
-btn--two {
+.btn--two {
   grid-area: two;
 }
 

@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 
+import { ThemeContext } from "./themeContext.js";
+
 // ------------- Display Component --------------------------------------------
 class Display extends Component {
+
   constructor(props) {
     super(props);
     this.inputRef = React.createRef();
@@ -13,14 +16,24 @@ class Display extends Component {
   }
 
   render() {
+    const themedClassNames = {
+      light: "display__input",
+      dark: "display__input display__input--dark",
+    }
     return(
       <div className="calc__display">
-        <textarea ref={ this.inputRef } value={ this.props.displayValue } className="display__input" readOnly={true}>
+        <textarea
+          ref={ this.inputRef }
+          value={ this.props.displayValue }
+          className={ themedClassNames[this.context] }
+          readOnly={true}>
         </textarea>
       </div>
     );
   }
 }
+
+Display.contextType = ThemeContext;
 
 
 Display.defaultProps = {
