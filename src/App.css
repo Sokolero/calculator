@@ -29,15 +29,24 @@ h2 {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+}
+
 .wrapper {
   padding: 0 260px;
   background-color: #C4C4C4;
 }
 
 .container {
+  position: relative;
   max-width: 920px;
   padding: 35px 70px;
   margin: 0 auto;
+}
+
+.calc-wrapper {
+  position: relative;
 }
 
 .calc {
@@ -198,10 +207,10 @@ btn--nothing {
   cursor: pointer;
 }
 
-.header__toggle--off {
+.header__toggle--light {
   background-image: url(../public/images/icon-toggle-off-50.png);
 }
 
-.header__toggle--on {
+.header__toggle--dark {
   background-image: url(../public/images/icon-toggle-on-50.png);
 }

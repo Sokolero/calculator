@@ -1,27 +1,29 @@
 import React, { Component } from "react";
+import classNames from "classnames";
 
-const getClassName = (props) => {
-  const theme = props.theme;
-  const themeClasses = {
-    light: "header__toggle--off",
-    dark: "header__toggle--on",
-  }
-  return `header__toggle ${themeClasses[theme]}`;
-}
 
-class Toggle extends Component {
-  constructor(props) {
-    super(props);
-  }
+//   const themeClasses = {
+//     light: "header__toggle--light",
+//     dark: "header__toggle--dark",
+//   }
+//   return `header__toggle ${themeClasses[theme]}`;
+// }
 
-  render() {
-    return(
-      <div
-        className={ getClassName(this.props) }
-        onClick={ this.props.handleToggleTheme}>
-      </div>
-    );
-  }
-}
+// ------ Toggle Component ----------------------------------------------------
+const Toggle = ({ handleToggleTheme, theme }) => {
+
+  let toggleClassname = classNames(
+    'header__toggle',
+    `header__toggle--${theme}`
+  );
+
+  return(
+    <div
+      className={ toggleClassname }
+      onClick={ handleToggleTheme}>
+    </div>
+  );
+};
+// ----------------------------------------------------------------------------
 
 export default Toggle;

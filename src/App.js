@@ -2,7 +2,10 @@ import React, { Component } from "react";
 
 import Calc from "./components/Calc.js";
 import Toggle from "./components/Toggle.js";
-import { ThemeContext } from "./components/themeContext.js";
+import Menu from "./components/Menu.js";
+import MenuToggler from "./components/MenuToggler.js";
+
+import { ThemeContext, MenuContext } from "./components/themeContext.js";
 
 import "./App.css";
 
@@ -14,6 +17,7 @@ class App extends Component {
     super(props);
     this.state = {
       theme: "light",
+      menu: "closed",
     }
     // this.handleToggleTheme = this.handleToggleTheme.bind(this);
   }
@@ -28,6 +32,16 @@ class App extends Component {
     this.setState((state, props) => ({ theme: switching[state.theme] }));
   }
 
+  handleToggleMenu = () => {
+
+    const switching = {
+      closed: "opened",
+      opened: "closed",
+    };
+
+    this.setState((state, props) => ({ menu: switching[state.menu] }));
+  }
+
   render() {
     return (
       <ThemeContext.Provider value={ this.state.theme }>
@@ -37,7 +51,11 @@ class App extends Component {
               <h1 className="header__heading">CALCULATE IT!</h1>
               <Toggle handleToggleTheme={ this.handleToggleTheme} theme={ this.state.theme }/>
             </div>
-            <Calc />
+            <div className="calc-wrapper">
+              <Calc />
+              <MenuToggler handleToggleMenu={ this.handleToggleMenu } menu={ this.state.menu } />
+              <Menu menu={ this.state.menu } />
+            </div>
           </div>
         </div>
       </ThemeContext.Provider>

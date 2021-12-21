@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Btn from "./Btn.js";
 
-// ---------- configuration of buttons ---------------------------------------
+// ---------- buttons filling ---------------------------------------
 const btns = {
   clear: "C",
   backspace: "<",
@@ -25,40 +25,37 @@ const btns = {
   null: "0",
   comma: ",",
   result: "=",
-}
+};
 
 // ------- generation of calculator buttons -----------------------------------
+const generateBtnList = (btns, handleClick) => {
+
+  const btnsList = [];
+
+  for (const [key, value] of Object.entries(btns)) {
+    btnsList.push(
+      <Btn
+        handleClick={ handleClick }
+        mainBtnClassName="btn"
+        btnName={ key }
+        btnValue={ value }
+        key={ key }
+      />
+    )
+  }
+  return btnsList;
+};
 
 
 // -------------Panel Component -----------------------------------------------
-class Panel extends Component {
-
-  generateBtnList(btns, handleClick) {
-    const btnsList = [];
-
-    for (const [key, value] of Object.entries(btns)) {
-      btnsList.push(
-        <Btn
-          handleClick={ handleClick }
-          mainBtnClassName="btn"
-          btnName={ key }
-          btnValue={ value }
-          key={ key }
-        />
-      )
-    }
-    return btnsList;
-  }
-
-  render() {
-    return(
-      <div className="calc__panel grid-container">
-        { this.generateBtnList(btns, this.props.handleClick) }
-      </div>
-    );
-  }
-
+const Panel = ({ handleClick }) => {
+  return(
+    <div className="calc__panel grid-container">
+      { generateBtnList(btns, handleClick) }
+    </div>
+  )
 }
+// ----------------------------------------------------------------------------
 
 
 Panel.propTypes = {

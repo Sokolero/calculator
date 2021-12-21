@@ -17,7 +17,6 @@ const themedStyles = {
 
 // ----- Button Component -----------------------------------------------------
 const Btn = (props) => {
-  // ReactHook
 
   const theme = useContext(ThemeContext);
 

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Panel from "./Panel.js";
 import Display from "./Display.js";
+
 import { clear, backspace, typeNumber, applyAction, result, summ } from "../utils/utils.js";
 
 
@@ -46,6 +47,8 @@ class Calc extends Component {
   handleClick(btnValue, btnName) {
     this.setState((state, props) => btnTypes[btnName](state, btnValue));
   }
+
+
 
   render() {
     return(

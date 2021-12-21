@@ -1,0 +1,100 @@
+.menu__toggler {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 50px;
+  width: 50px;
+
+  padding: 5px 5px;
+
+  background-color: #f5f6f7;
+  border: 1px rgba(62, 65, 69, 0.2) solid;
+}
+
+/* .menu__toggler--closed {
+  justify-content: space-between;
+}
+
+.menu__toggler--opened {
+  justify-content: center;
+} */
+
+
+
+.toggler__item {
+  width: 100%;
+  height: 5px;
+
+  background-color: black;
+  border-radius: 1px;
+
+  transform-origin: left center;
+
+  transition: transform 0.5s ease-in;
+}
+
+/* Animation */
+@keyframes top-forward {
+  from {transform: rotate();}
+  to {transform: rotate(30deg) scaleX(0.9);}
+}
+
+@keyframes top-back {
+  from {transform: rotate(30deg);}
+  to {transform: rotate();}
+}
+
+.toggler__top--opened {
+  animation: top-forward 0.5s ease-out ;
+  animation-fill-mode: forwards;
+}
+
+.toggler__top--closed {
+  animation: top-back 0.5s ease-in;
+}
+
+/* ------- */
+@keyframes bottom-forward {
+  from {transform: rotate();}
+  to {transform: rotate(-30deg) scaleX(0.9);}
+}
+
+@keyframes bottom-back {
+  from {transform: rotate(-30deg) scaleX(0.9);}
+  to {transform: rotate();}
+}
+
+.toggler__bottom--opened {
+  animation: bottom-forward 0.5s ease-out ;
+  animation-fill-mode: forwards;
+}
+
+.toggler__bottom--closed {
+  animation: bottom-back 0.5s ease-in;
+}
+
+/* ------- */
+@keyframes middle-forward {
+  from {transform: scaleX();}
+  to {transform: scaleX(0.75);}
+}
+
+@keyframes middle-back {
+  from {transform: scaleX(0.75);}
+  to {transform: scaleX();}
+}
+
+.toggler__middle--opened {
+  animation: middle-forward 0.5s ease-out ;
+  animation-fill-mode: forwards;
+}
+
+.toggler__middle--closed {
+  animation: middle-back 0.5s ease-in;
+}

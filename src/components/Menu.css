@@ -1,0 +1,46 @@
+.menu-wrapper {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+}
+
+.menu {
+  height: 300px;
+  width: 170px;
+
+  padding-top: 80px;
+
+  font-size: 16px;
+
+  background-color: #f5f6f7;
+
+  box-shadow: 5px -5px 4px 0 #8d9299;
+
+}
+
+@keyframes extendMenu {
+  from {width: 0px; height: 0px;}
+  to {width: 170px; height: 300px;}
+}
+
+@keyframes packMenu {
+  from {width: 170px; height: 300px;}
+  to {width: 0px; height: 0px;}
+}
+
+.menu--closed {
+  display: none;
+  animation: packMenu 0.5s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.menu--opened {
+  animation: extendMenu 0.5s ease-in;
+}
+
+.menu .menu__list {
+  margin: 0;
+  list-style-type: none;
+
+}
