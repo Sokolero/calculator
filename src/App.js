@@ -4,6 +4,7 @@ import Calc from "./components/Calc.js";
 import Toggle from "./components/Toggle.js";
 import Menu from "./components/Menu.js";
 import MenuToggler from "./components/MenuToggler.js";
+import ErrorBoundary from "./components/ErrorBoundary.js";
 
 import { ThemeContext, MenuContext } from "./components/themeContext.js";
 
@@ -49,12 +50,19 @@ class App extends Component {
           <div className="container">
             <div className="header">
               <h1 className="header__heading">CALCULATE IT!</h1>
-              <Toggle handleToggleTheme={ this.handleToggleTheme} theme={ this.state.theme }/>
+              <ErrorBoundary>
+                <Toggle handleToggleTheme={ this.handleToggleTheme} theme={ this.state.theme }/>
+              </ErrorBoundary>
             </div>
             <div className="calc-wrapper">
-              <Calc />
-              <MenuToggler handleToggleMenu={ this.handleToggleMenu } menu={ this.state.menu } />
-              <Menu menu={ this.state.menu } />
+              <ErrorBoundary>
+                <Calc />
+              </ErrorBoundary>
+                            
+              <ErrorBoundary>
+                <MenuToggler handleToggleMenu={ this.handleToggleMenu } menu={ this.state.menu } />
+                <Menu menu={ this.state.menu } />
+              </ErrorBoundary>
             </div>
           </div>
         </div>

@@ -19,5 +19,7 @@
 - Hooks - done (useContext)
 - Classnames library - done
 - To use arrow functions as class properties, it needed ""@babel/plugin-proposal-class-properties""
-- Error boundaries/ Предохранители
+- Error boundaries/ Предохранители - Done
+- Forwarded refs - ?
+- Fragments - 
 ***
