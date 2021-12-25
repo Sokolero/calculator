@@ -20,7 +20,6 @@ class App extends Component {
       theme: "light",
       menu: "closed",
     }
-    // this.handleToggleTheme = this.handleToggleTheme.bind(this);
   }
 
   handleToggleTheme = () => {
@@ -58,7 +57,7 @@ class App extends Component {
               <ErrorBoundary>
                 <Calc />
               </ErrorBoundary>
-                            
+
               <ErrorBoundary>
                 <MenuToggler handleToggleMenu={ this.handleToggleMenu } menu={ this.state.menu } />
                 <Menu menu={ this.state.menu } />
